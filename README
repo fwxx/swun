@@ -1,0 +1,32 @@
+SWUN (Simple softWare Update Notifier) 
+is a simple update notifier intended for the use with Slackware Linux.
+
+Swun is a very simple Update notifier, which places itself as an an 
+icon into the notification area of the desktop environments.
+It does not more than check changes in the changelog 
+-This is essentially what "slackpkg check-updates" does-
+and changes the icon color accordingly:
+red == update available,
+green == system is up to date(no changes to the changelog)
+
+Right Click-> There are only 4 Menu Actions:
+- Check ChangeLog
+ (this is the action, that is automatically triggered from time to time, 
+  but you are able to trigger it here)
+- CheckUpdateState
+  this will do a "Check Changelog" and afterwards check, if all packages
+  listed in the cache are really installed(slackpkg upgrade, but no install). 
+  if not, it will display these items(root rights required).
+- Update System
+  This will open a terminal with root rights to give you the chance 
+  to run an interactive update(slackpkg upgrade). 
+- Quit is self explaining ;-)
+
+Have Fun!
+
+
+Note on root rights:
+You can also add slackpkg tool as a sudo command:
+# enable sudo package management without passwords questions like in this line:
+$(user)  ALL=(root) NOPASSWD: /usr/sbin/slackpkg
+And set the "USE_SUDO" variable in swun.sh to "yes".

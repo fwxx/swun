@@ -1,0 +1,20 @@
+
+#######################CODING INFOS################################
+slackpkg always returns 0
+
+STATE=
+
+check-updates/ChangeLog.txt
+if there are changes , 
+   check-updates writes "News on ChangeLog.txt"
+else
+   check-updates writes "No news is good news"
+
+
+update/ChangeLog.txt
+update updates the ChangeLog.txt
+after an call to update, 
+check-updates will return "No news is good news"
+
+
+

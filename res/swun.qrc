@@ -1,0 +1,8 @@
+<!DOCTYPE RCC><RCC version="1.0">
+ <qresource prefix="/">
+    <file>../images/unknown.png</file>
+    <file>../images/uptodate.png</file>
+    <file>../images/packages.png</file>
+    <file>../images/newupdates.png</file>
+ </qresource>
+ </RCC>
