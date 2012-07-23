@@ -99,7 +99,7 @@ MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
                                   QSystemTrayIcon::Information,1000);
           break;
      case QSystemTrayIcon::MiddleClick:
-          m_trayIcon->showMessage("Swun","sVersion.c_str()",
+          m_trayIcon->showMessage("Swun",sVersion.c_str(),
                                   QSystemTrayIcon::Information,1000);
           break;
      default:
