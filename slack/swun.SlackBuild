@@ -75,8 +75,8 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 # Compress man pages
 # If the man pages are installed to /usr/share/man instead, you'll need to 
 # move them manually.
-#find $PKG/usr/man -type f -exec gzip -9 {} \;
-#for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
+find $PKG/usr/man -type f -exec gzip -9 {} \;
+for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
