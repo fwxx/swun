@@ -154,7 +154,7 @@ MainWindow::doUpdate()
  std::cout << "do an update" << std::endl;
  m_packBE->doUpdate();
  m_state=PackageBackend::ePBS_Unknown;
- checkState();
+ checkChangelog();
 }
 
 

@@ -13,39 +13,61 @@ swun \- simple SoftWare Update Notifier
 is a very simple update notifier intended for the use with Slackware Linux.
 .PP
 swun places itself as an an icon into the notification area of the 
-desktop environments.
-It does not more than check changes in the changelog 
--This is essentially what 
+desktop environments. It uses 
+.B slackpkg
+as backend, so you must have configured slackpkg!
+Swun does not more than check for changes in the changelog 
+with 
 .B "slackpkg check-updates" 
-does- and changes the icon color accordingly:
+and changes the icon color accordingly:
+.IP 
 .BR red 
 == update available,
+.IP
 .BR green 
 == system is up to date(no changes to the changelog).
 
 .SS
-Menu Actions(Right Click):
+Left Click:
+.TP 5
+Shows the information from the last command. 
+That means you normally get the status.
+
+.SS
+Middle Click:
+.TP 5
+Shows Version information.
+
+.SS
+Right Click: Menu Actions
 .TP 5
 - Check Changelog
 this is the action, that is automatically triggered from time to time, 
 but you are able to trigger it here.
 .TP 5
 - Check Update State
-this will do a "Check Changelog" and afterwards check, if all packages
+this will do a "Check Changelog" and check afterwards, if all packages
 listed in the cache are really installed (
 .B slackpkg upgrade
-, but no install). 
-if not, it will display these items(root rights required).
+, without install, nevertheless root rights are required). 
+if not all upgradeable packages are installed, it will display these items.
+And the icon color will be 
+.BR orange.
+You are able to check this special update state only with this action.
 .TP 5
 - Update System
 This will open a terminal with root rights to give you the chance 
 to run an interactive update (
 .B slackpkg upgrade
 ). 
+No matter if you install all upgrades or only some of them, the state will
+be up-to-date(green) afterwards, because the changelog is up-to-date.
+Detailed information can be retrieved with "Check Update State".
 .TP 5
 - Quit 
 is self explaining ;-)
 
+.SH NOTES
 .SS
 Note on root rights
 You can also add slackpkg tool as a sudo command:
