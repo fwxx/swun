@@ -1,8 +1,42 @@
-SWUN (Simple softWare Update Notifier) 
-is a simple update notifier intended for the use with Slackware Linux.
+SWUN (simple SoftWare Update Notifier) 
+======================================
+Swun is a very simple update notifier intended for the use with Slackware Linux.
+It places itself as an an icon into the notification area of your desktop 
+environment.
 
-Swun is a very simple Update notifier, which places itself as an an 
-icon into the notification area of the desktop environments.
+
+======== GET STARTED =========
+* First of all you need a working slackpkg setup(-> slackpkg manpage for this.)
+* You will find Swun in KDE menu under Applications -> System,
+  probably also on other desktops. 
+* After Start, you will recognize a new icon in the notification area 
+  of your desktop environment. 
+* After a few seconds it should turn green or red depending on the 
+  actually installed Software on your system.
+* In KDE it will be automatically restarted in a later login.
+
+Have Fun!
+
+
+
+======== Nobody is perfect ========
+Unfortunately I can not test every possible constellation/configuration.
+If you found some issue or bug or miss some feature:
+Please create an issue on http://code.google.com/p/swun/issues/
+(unfortunately you need a google account there)
+or simply send an email to fwxx@rocketmail.com,
+and I will see what I can do for you!
+Please Contribute to improve this piece of software!
+I'd also appreciate, if you just tell me that you like this software ;-)
+
+
+
+
+======== Documentation ========
+Swun is (quite) well documented in its man page, have a look at it(man swun).
+
+
+How Swun works:
 It does not more than check changes in the changelog 
 -This is essentially what "slackpkg check-updates" does-
 and changes the icon color accordingly:
@@ -22,7 +56,6 @@ Right Click-> There are only 4 Menu Actions:
   to run an interactive update(slackpkg upgrade). 
 - Quit is self explaining ;-)
 
-Have Fun!
 
 
 Note on root rights:
