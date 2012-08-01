@@ -1,7 +1,7 @@
 project( swun )
 cmake_minimum_required( VERSION 2.6 )
 
-set( VERSION        0.0.1 )
+set( VERSION        0.0.2 )
 set( TARGET         swun )
 set( SRCS           src/main.cpp src/MainWindow.cpp src/SlackPKG.cpp )
 set( MOC_HEADERS    src/MainWindow.h )

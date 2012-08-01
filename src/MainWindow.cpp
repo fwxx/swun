@@ -49,7 +49,7 @@ MainWindow::MainWindow()
  m_quitAction    = new QAction(tr("&Quit"), this);
  connect( m_restoreAction, SIGNAL(triggered()), this, SLOT(showNormal()));
  connect( m_quitAction,    SIGNAL(triggered()), qApp, SLOT(quit()));
- connect( m_checkCLAction, SIGNAL(triggered()), this, SLOT(checkChangelog()));
+ connect( m_checkCLAction, SIGNAL(triggered()), this, SLOT(triggeredCheckChangelog()));
  connect( m_checkSAction,  SIGNAL(triggered()), this, SLOT(checkState()));
  connect( m_updateAction,  SIGNAL(triggered()), this, SLOT(doUpdate()));
 
@@ -59,7 +59,7 @@ MainWindow::MainWindow()
 	 this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
  m_timer = new QTimer(this);
  m_timer->start(5000);
- connect( m_timer, SIGNAL(timeout()), this, SLOT(checkChangelog()));
+ connect( m_timer, SIGNAL(timeout()), this, SLOT(autoCheckChangelog()));
 
  m_trayIcon->show();
  setWindowTitle(tr("Swun"));
@@ -109,7 +109,7 @@ MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
 
 
 void
-MainWindow::checkChangelog()
+MainWindow::autoCheckChangelog()
 {
  static bool firstCall=true;
  if(firstCall)
@@ -117,23 +117,21 @@ MainWindow::checkChangelog()
      m_timer->start(3600000);
      firstCall=false;
     }
- std::cout << "check changelog" << std::endl;
- bool outdated=m_packBE->check();
- std::string output=m_packBE->getOutput();
- if(outdated)
+ std::cout << "autoCheckChangelog" << std::endl;
+ if(checkChangelog())
     {
+     std::string output=m_packBE->getOutput();
      m_trayIcon->showMessage("Swun",output.c_str());
-     m_state=PackageBackend::ePBS_ChangelogOutdated;
     }
- else
-    {
-     if(m_state==PackageBackend::ePBS_Unknown)
-	{
-	 m_trayIcon->showMessage("Swun",output.c_str());
-	 m_state=PackageBackend::ePBS_UpToDate;
-	}
-    }
- updateIcon();
+}
+
+void 
+MainWindow::triggeredCheckChangelog()
+{
+ std::cout << "triggeredCheckChangelog" << std::endl;
+ checkChangelog();
+ std::string output=m_packBE->getOutput();
+ m_trayIcon->showMessage("Swun",output.c_str());
 }
 
 
@@ -154,8 +152,32 @@ MainWindow::doUpdate()
  std::cout << "do an update" << std::endl;
  m_packBE->doUpdate();
  m_state=PackageBackend::ePBS_Unknown;
- checkChangelog();
+ autoCheckChangelog();
 }
+
+
+bool 
+MainWindow::checkChangelog()
+{
+ bool outdated=m_packBE->check();
+ bool stateChange=false;
+ if(outdated)
+    {
+     stateChange=true;
+     m_state=PackageBackend::ePBS_ChangelogOutdated;
+    }
+ else
+    {
+     if(m_state==PackageBackend::ePBS_Unknown)
+	{
+	 stateChange=true;
+	 m_state=PackageBackend::ePBS_UpToDate;
+	}
+    }
+ updateIcon();
+ return stateChange;
+}
+
 
 
 void 

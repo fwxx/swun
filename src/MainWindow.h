@@ -50,11 +50,14 @@ protected:
 
 private slots:
     void iconActivated(QSystemTrayIcon::ActivationReason reason);
-    void checkChangelog();
+    void autoCheckChangelog();
+    void triggeredCheckChangelog();
     void checkState();
     void doUpdate();
 
 private:
+    /// returns if state changes and we should show a message
+    bool checkChangelog(); 
     void createTrayIcon();
     void updateIcon();
 
