@@ -17,4 +17,16 @@ after an call to update,
 check-updates will return "No news is good news"
 
 
-
+#######################EXPORT INFOS################################
+#create annotated tag
+git tag -a -m "new tag 0.0.1" v0.0.1
+git archive --format=tar.gz -o FILENAME --prefix=swun-TAG/ vTAG
+git archive --format=tar.gz -o ../swun-0.0.1.tar.gz --prefix=swun-0.0.1/ v0.0.1
+#check everything
+#publish tag
+git push origin v0.0.1
+#publish archives
+python googlecode_upload.py -s "swun source release 0.0.2" -p swun v0.0.2/swun-0.0.2.tar.gz
+python googlecode_upload.py -s "swun source release 0.0.2 checksum" -p swun v0.0.2/swun-0.0.2.tar.gz.MD5
+python googlecode_upload.py -s "swun release 0.0.2 package for slackware64 14.0" -p swun v0.0.2/swun-0.0.2-x86_64-1_fwxx.tgz
+python googlecode_upload.py -s "swun release 0.0.2 package for slackware64 14.0 checksum" -p swun v0.0.2/swun-0.0.2-x86_64-1_fwxx.tgz.MD5
