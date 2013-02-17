@@ -5,7 +5,37 @@ It places itself as an an icon into the notification area of your desktop
 environment.
 
 
-======== GET STARTED =========
+
+======== BUILDING and INSTALLING =========
+There is an slackware build script located in the subdirectory slack.
+You can simply do the following to create a slackware package(you must be root):
+
+cd slack
+./swun.Slackbuild.direct
+
+Now a there should be an installable slackware package in your tmp directory, 
+e.g. /tmp/swun-0.0.2-x86_64-1_fwxx.tgz
+Install this package with
+upgradepkg --install-new /tmp/swun-0.0.2-x86_64-1_fwxx.tgz
+That's it.
+
+If you want more detail read on:
+Swun is a cmake project, so building and installing is done this way:
+* run cmake 
+* run make
+* run make install
+You might want to create a separate build directory.
+This is how I'm working:
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make
+make install
+
+
+
+
+======== GETTING STARTED =========
 * First of all you need a working slackpkg setup(-> slackpkg manpage for this.)
 * You will find Swun in KDE menu under Applications -> System,
   probably also on other desktops. 
@@ -14,6 +44,7 @@ environment.
 * After a few seconds it should turn green or red depending on the 
   actually installed Software on your system.
 * In KDE it will be automatically restarted in a later login.
+* swun is documented on its man page(man swun)
 
 Have Fun!
 
