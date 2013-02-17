@@ -1,0 +1,52 @@
+2013-02-17 11:46:01 +0100 Benno <fwxx@rocketmail.com> 
+
+	* added help menu entry (HEAD, origin/master, master)
+
+2013-02-17 11:43:17 +0100 Benno <fwxx@rocketmail.com> 
+
+	* added GenericName to desktop file
+
+2013-02-17 11:42:14 +0100 Benno <fwxx@rocketmail.com> 
+
+	* added section building and installing to README, fixed slackware build scripts
+
+2012-08-01 21:43:58 +0200 Benno <fwxx@rocketmail.com> 
+
+	* fixed typo in TAG, TMP now also does not point to SBo subdirectory
+
+2012-08-01 21:36:36 +0200 Benno <fwxx@rocketmail.com> 
+
+	* default package tag set to fwxx, as it is still not in slackbuilds.org, changed version to 0.0.2 now
+
+2012-08-01 21:25:14 +0200 Benno <fwxx@rocketmail.com> 
+
+	* manually triggerd checkChangelog will always show a message as result. this gives a feedback to the user, that something happened
+
+2012-07-28 00:00:11 +0200 Benno <fwxx@rocketmail.com> 
+
+	* nearly completely rewritten README
+
+2012-07-26 19:40:34 +0200 Benno <fwxx@rocketmail.com> 
+
+	* updated slackware package info (v0.0.1)
+
+2012-07-24 19:24:33 +0200 Benno <fwxx@rocketmail.com> 
+
+	* fix in direct build script
+
+2012-07-24 19:20:29 +0200 Benno <fwxx@rocketmail.com> 
+
+	* updated man page, little behaviour change
+
+2012-07-23 23:53:15 +0200 Benno <fwxx@rocketmail.com> 
+
+	* fixed wrong quotes
+
+2012-07-23 23:47:47 +0200 Benno <fwxx@rocketmail.com> 
+
+	* added first version of a man page
+
+2012-07-23 00:03:20 +0200 Benno <fwxx@rocketmail.com> 
+
+	* initial checkin
+

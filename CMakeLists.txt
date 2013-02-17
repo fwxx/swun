@@ -33,3 +33,7 @@ install( PROGRAMS swun.sh DESTINATION bin
 install( FILES LICENSE.txt README DESTINATION doc/${TARGET}-${VERSION} )
 install( FILES swun.desktop DESTINATION share/applications )
 install( FILES man/swun.1 DESTINATION man/man1 )
+
+
+#help stuff
+add_custom_target(changelog COMMAND git --no-pager log --format='%ai %an <%ae> %n%n%x09* %s%d%n' > ChangeLog WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
