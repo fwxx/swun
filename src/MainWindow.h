@@ -54,6 +54,7 @@ private slots:
     void triggeredCheckChangelog();
     void checkState();
     void doUpdate();
+    void showHelp();
 
 private:
     /// returns if state changes and we should show a message
@@ -63,6 +64,7 @@ private:
 
 private:
     QAction* m_restoreAction;
+    QAction* m_helpAction;
     QAction* m_quitAction;
     QAction* m_checkCLAction;
     QAction* m_checkSAction;

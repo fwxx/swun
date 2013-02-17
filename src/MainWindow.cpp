@@ -33,6 +33,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
 #include <QtGui>
 #include <iostream>
 #include "SlackPKG.h"
+#include <stdlib.h>
 
 static const std::string sVersion= SWUN_VERSION ;
 
@@ -47,11 +48,13 @@ MainWindow::MainWindow()
  m_updateAction  = new QAction(tr("&Update System"), this);
  m_restoreAction = new QAction(tr("&Restore"), this);
  m_quitAction    = new QAction(tr("&Quit"), this);
+ m_helpAction    = new QAction(tr("&Help"), this);
  connect( m_restoreAction, SIGNAL(triggered()), this, SLOT(showNormal()));
  connect( m_quitAction,    SIGNAL(triggered()), qApp, SLOT(quit()));
  connect( m_checkCLAction, SIGNAL(triggered()), this, SLOT(triggeredCheckChangelog()));
  connect( m_checkSAction,  SIGNAL(triggered()), this, SLOT(checkState()));
  connect( m_updateAction,  SIGNAL(triggered()), this, SLOT(doUpdate()));
+ connect( m_helpAction,    SIGNAL(triggered()), this, SLOT(showHelp()) );
 
  createTrayIcon();
 
@@ -156,6 +159,16 @@ MainWindow::doUpdate()
 }
 
 
+void
+MainWindow::showHelp()
+{
+ std::cout << "show help" << std::endl;
+ static const std::string TERMINAL="xterm -bg black -fg grey";
+ std::string cmd=TERMINAL + " -e 'man swun'";
+ system(cmd.c_str());
+}
+
+
 bool 
 MainWindow::checkChangelog()
 {
@@ -188,6 +201,7 @@ MainWindow::createTrayIcon()
  m_trayIconMenu->addAction(m_checkSAction);
  m_trayIconMenu->addAction(m_updateAction);
  //m_trayIconMenu->addAction(m_restoreAction);
+ m_trayIconMenu->addAction(m_helpAction);
  m_trayIconMenu->addAction(m_quitAction);
 
  m_trayIcon = new QSystemTrayIcon(this);
