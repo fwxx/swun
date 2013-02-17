@@ -1,6 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=swun
+GenericName=swun (SoftWare Update Notifier for Slackware)
 Comment=SW Update Notifier for SlackWare
 Exec=swun
 Icon=
