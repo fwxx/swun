@@ -34,17 +34,31 @@ THE POSSIBILITY OF SUCH DAMAGE.
 #include <QSystemTrayIcon>
 #include <QMessageBox>
 #include "MainWindow.h"
+#include <iostream>
+#include <unistd.h>
 
 int main(int argc, char* argv[])
 {
  QApplication app(argc,argv);
- if( !QSystemTrayIcon::isSystemTrayAvailable() )
+
+ const int MAX_RETRIES=10;
+ int i=0;
+ std::cout << "trying";
+ while( !QSystemTrayIcon::isSystemTrayAvailable() )
     {
-     QMessageBox::critical(0, 
-               QObject::tr("Swun"),
-	       QObject::tr("Couldn't detect an system tray on this system."));
-     return 1;
+     ++i;
+     std::cout << "." << std::flush;
+     sleep(1);
+     if(i>=MAX_RETRIES)
+	{
+	 std::cout << "aborting!" << std::endl;
+	 QMessageBox::critical(0, 
+		 QObject::tr("Swun"),
+		 QObject::tr("Couldn't detect an system tray on this system."));
+	 return 1;
+	}
     }
+ std::cout << std::endl;
 
  MainWindow w;
  w.hide();
