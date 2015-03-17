@@ -115,16 +115,22 @@ void
 MainWindow::autoCheckChangelog()
 {
  static bool firstCall=true;
- if(firstCall)
-    {
-     m_timer->start(3600000);
-     firstCall=false;
-    }
  std::cout << "autoCheckChangelog" << std::endl;
  if(checkChangelog())
     {
      std::string output=m_packBE->getOutput();
-     m_trayIcon->showMessage("Swun",output.c_str());
+     if(firstCall && m_state==PackageBackend::ePBS_UpToDate)
+        {//do nothing in this case
+        }
+     else
+        {
+         m_trayIcon->showMessage("Swun",output.c_str());
+        }
+    }
+ if(firstCall)
+    {
+     m_timer->start(3600000);
+     firstCall=false;
     }
 }
 
