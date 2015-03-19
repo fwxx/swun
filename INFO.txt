@@ -25,7 +25,10 @@ git archive --format=tar.gz -o ../swun-0.0.1.tar.gz --prefix=swun-0.0.1/ v0.0.1
 #check everything
 #publish tag
 git push origin v0.0.1
-#publish archives
+#publish archives(github.com)
+manually upload them to a release.
+
+#publish archives(google: deprecated)
 python googlecode_upload.py -s "swun source release 0.0.2" -p swun v0.0.2/swun-0.0.2.tar.gz
 python googlecode_upload.py -s "swun source release 0.0.2 checksum" -p swun v0.0.2/swun-0.0.2.tar.gz.MD5
 python googlecode_upload.py -s "swun release 0.0.2 package for slackware64 14.0" -p swun v0.0.2/swun-0.0.2-x86_64-1_fwxx.tgz
