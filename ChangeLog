@@ -1,6 +1,46 @@
+2016-07-16 11:23:31 +0200 Benno <fwxx@rocketmail.com> 
+
+	* - fix homepage in slack-desc - fix slackbuild scripts (HEAD -> master, origin/master, origin/HEAD)
+
+2015-03-19 01:35:41 +0100 Benno <fwxx@rocketmail.com> 
+
+	* Merge branch 'master' of https://github.com/fwxx/swun
+
+2015-03-19 01:28:53 +0100 Benno <fwxx@rocketmail.com> 
+
+	* fixed some information(move to github)
+
+2015-03-17 21:46:19 +0100 Benno <fwxx@rocketmail.com> 
+
+	* Merge branch 'master' of https://code.google.com/p/swun
+
+2013-11-26 23:50:15 +0100 Benno <fwxx@rocketmail.com> 
+
+	* don't showMessage() on icon at startup, if there is no single update
+
+2013-04-11 23:31:45 +0200 Benno <fwxx@rocketmail.com> 
+
+	* version 0.0.3
+
+2013-04-11 23:24:06 +0200 Benno <fwxx@rocketmail.com> 
+
+	* fix startup: try 10 seconds to get a system tray
+
+2013-02-18 21:14:30 +0100 Benno <fwxx@rocketmail.com> 
+
+	* updated SBo slackbuild scripts(submission)
+
+2013-02-17 14:41:15 +0100 Benno <fwxx@rocketmail.com> 
+
+	* added release infos to INFO.txt
+
+2013-02-17 12:19:25 +0100 Benno <fwxx@rocketmail.com> 
+
+	* added ChangeLog, and Changelog generation command (tag: v0.0.2)
+
 2013-02-17 11:46:01 +0100 Benno <fwxx@rocketmail.com> 
 
-	* added help menu entry (HEAD, origin/master, master)
+	* added help menu entry
 
 2013-02-17 11:43:17 +0100 Benno <fwxx@rocketmail.com> 
 
@@ -28,7 +68,7 @@
 
 2012-07-26 19:40:34 +0200 Benno <fwxx@rocketmail.com> 
 
-	* updated slackware package info (v0.0.1)
+	* updated slackware package info (tag: v0.0.1)
 
 2012-07-24 19:24:33 +0200 Benno <fwxx@rocketmail.com> 
 
