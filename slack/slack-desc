@@ -15,5 +15,5 @@ swun: with slackpkg check-updates and changes the icon color accordingly.
 swun: Gives you the chance to run an interactive update via a terminal.
 swun: Currently only implemented and designed for Slackware Linux.
 swun:
-swun: Homepage: http://code.google.com/p/swun/
+swun: Homepage: http://fwxx.github.io/swun/
 swun:
