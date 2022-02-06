@@ -1,24 +1,28 @@
 project( swun )
-cmake_minimum_required( VERSION 2.6 )
+cmake_minimum_required( VERSION 3.8 )
 
 set( VERSION        0.0.3 )
 set( TARGET         swun )
-set( SRCS           src/main.cpp src/MainWindow.cpp src/SlackPKG.cpp )
-set( MOC_HEADERS    src/MainWindow.h )
+set( SRCS           src/main.cpp
+                    src/MainWindow.h
+                    src/MainWindow.cpp
+                    src/PackageBackend.h
+                    src/SlackPKG.h
+                    src/SlackPKG.cpp
+                    )
 set( RESOURCES      res/swun.qrc )
 
 #qt stuff
-find_package(Qt4 4.7.0 COMPONENTS QtCore QtGui REQUIRED )
-QT4_ADD_RESOURCES( RES_SRCS ${RESOURCES})
-QT4_WRAP_CPP( MOC_SRCS ${MOC_HEADERS} )
+set( CMAKE_AUTOMOC ON )
+set( CMAKE_AUTORCC ON )
+find_package(Qt5 5.15 COMPONENTS Core Widgets REQUIRED )
 
-include( ${QT_USE_FILE} )
 add_definitions( -DSWUN_VERSION="${VERSION}" )
 
 
 #build
-add_executable( ${TARGET} ${SRCS} ${MOC_SRCS} ${RES_SRCS})
-target_link_libraries( ${TARGET} ${QT_LIBRARIES} )
+add_executable( ${TARGET} ${SRCS} ${RESOURCES})
+target_link_libraries( ${TARGET} Qt5::Core Qt5::Widgets )
 
 
 #install

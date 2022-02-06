@@ -30,9 +30,15 @@ THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
 #include "MainWindow.h"
-#include <QtGui>
-#include <iostream>
 #include "SlackPKG.h"
+
+#include <QApplication>
+#include <QSystemTrayIcon>
+#include <QAction>
+#include <QMenu>
+#include <QTimer>
+#include <QCloseEvent>
+#include <iostream>
 #include <stdlib.h>
 
 static const std::string sVersion= SWUN_VERSION ;
