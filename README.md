@@ -35,6 +35,7 @@ Swun is a cmake project, so building and installing is done this way:
 
 You might want to create a separate build directory.
 This is how I'm working:
+
     $ mkdir build
     $ cd build
     $ cmake -DCMAKE_BUILD_TYPE=Release ..
@@ -106,5 +107,7 @@ Right Click-> There are only 4 Menu Actions:
 ### Alternative Setup
 You can also add slackpkg tool as a sudo command:
 enable sudo package management without passwords questions like in this line:
+
     $(user)  ALL=(root) NOPASSWD: /usr/sbin/slackpkg
+
 And set the "USE\_SUDO" variable in swun.sh to "yes".
