@@ -34,7 +34,7 @@ install( TARGETS ${TARGET} DESTINATION bin
                            CONFIGURATIONS Release )
 install( PROGRAMS swun.sh DESTINATION bin 
                        CONFIGURATIONS Release )
-install( FILES LICENSE.txt README DESTINATION doc/${TARGET}-${VERSION} )
+install( FILES LICENSE.txt README.md DESTINATION doc/${TARGET}-${VERSION} )
 install( FILES swun.desktop DESTINATION share/applications )
 install( FILES man/swun.1 DESTINATION man/man1 )
 
