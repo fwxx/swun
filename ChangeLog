@@ -1,6 +1,30 @@
+2022-02-10 23:52:43 +0100 Benno <fwxx@rocketmail.com> 
+
+	* prepare for release v0.0.4 (HEAD -> master)
+
+2022-02-10 23:41:18 +0100 Benno <fwxx@rocketmail.com> 
+
+	* fix README rename
+
+2022-02-10 22:27:37 +0100 Benno <fwxx@rocketmail.com> 
+
+	* fix README.md format (origin/master, origin/HEAD)
+
+2022-02-10 22:15:01 +0100 Benno <fwxx@rocketmail.com> 
+
+	* format README as markdown
+
+2022-02-06 23:35:18 +0100 Benno <fwxx@rocketmail.com> 
+
+	* Switch to Qt5 / Slackware 15.0
+
+2016-07-16 11:57:07 +0200 Benno <fwxx@rocketmail.com> 
+
+	* updated Changelog (tag: v0.0.3)
+
 2016-07-16 11:23:31 +0200 Benno <fwxx@rocketmail.com> 
 
-	* - fix homepage in slack-desc - fix slackbuild scripts (HEAD -> master, origin/master, origin/HEAD)
+	* - fix homepage in slack-desc - fix slackbuild scripts
 
 2015-03-19 01:35:41 +0100 Benno <fwxx@rocketmail.com> 
 
