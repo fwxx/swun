@@ -1,18 +1,18 @@
 #!/bin/sh
 
 # Slackware build script for swun
-# Written by Benno Grolik fwxx@rocketmail.com
+# Written by Benno fwxx@rocketmail.com
 
 
 PRGNAM=swun
-VERSION=${VERSION:-0.0.3}
+VERSION=${VERSION:-0.0.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_fwxx}
 
 # Automatically determine the architecture we're building on:
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
-    i?86) ARCH=i486 ;;
+    i?86) ARCH=i586 ;;
     arm*) ARCH=arm ;;
 # Unless $ARCH is already set, use uname -m for all other archs:
        *) ARCH=$( uname -m ) ;;
@@ -24,8 +24,8 @@ TMP=${TMP:-/tmp/fwxx}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-if [ "$ARCH" = "i486" ]; then
-  SLKCFLAGS="-O2 -march=i486 -mtune=i686"
+if [ "$ARCH" = "i586" ]; then
+  SLKCFLAGS="-O2 -march=i586 -mtune=i686"
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "i686" ]; then
   SLKCFLAGS="-O2 -march=i686 -mtune=i686"
@@ -54,7 +54,7 @@ cd build
     -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=Release ..
-  make 
+  make
   make install DESTDIR=$PKG
 cd ..
 

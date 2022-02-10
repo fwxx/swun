@@ -1,7 +1,7 @@
 project( swun )
 cmake_minimum_required( VERSION 3.8 )
 
-set( VERSION        0.0.3 )
+set( VERSION        0.0.4 )
 set( TARGET         swun )
 set( SRCS           src/main.cpp
                     src/MainWindow.h
