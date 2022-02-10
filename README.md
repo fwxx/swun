@@ -6,36 +6,48 @@ environment.
 
 
 
-======== BUILDING and INSTALLING =========
+BUILDING and INSTALLING
+-----------------------
+
+### Quick
 There is an slackware build script located in the subdirectory slack.
 You can simply do the following to create a slackware package(you must be root):
 
-cd slack
-./swun.Slackbuild.direct
+    $ cd slack
+    $ ./swun.Slackbuild.direct
 
-Now a there should be an installable slackware package in your tmp directory, 
-e.g. /tmp/swun-0.0.2-x86_64-1_fwxx.tgz
+Now there should be an installable slackware package in your tmp directory, e.g.
+ ``tmp/swun-0.0.2-x86_64-1_fwxx.tgz``
 Install this package with
-upgradepkg --install-new /tmp/swun-0.0.2-x86_64-1_fwxx.tgz
+
+    # upgradepkg --install-new /tmp/swun-0.0.2-x86_64-1_fwxx.tgz
+
 That's it.
 
 If you want more detail read on:
+
+### Details
 Swun is a cmake project, so building and installing is done this way:
+
 * run cmake 
 * run make
 * run make install
+
 You might want to create a separate build directory.
 This is how I'm working:
-mkdir build
-cd build
-cmake -DCMAKE_BUILD_TYPE=Release ..
-make
-make install
+    $ mkdir build
+    $ cd build
+    $ cmake -DCMAKE_BUILD_TYPE=Release ..
+    $ make
+    $ make install
 
 
 
 
-======== GETTING STARTED =========
+GETTING STARTED
+---------------
+Now that you have installed swun, do a setup for the tool:
+
 * First of all you need a working slackpkg setup(-> slackpkg manpage for this.)
 * You will find Swun in KDE menu under Applications -> System,
   probably also on other desktops. 
@@ -50,7 +62,8 @@ Have Fun!
 
 
 
-======== Nobody is perfect ========
+ISSUES: Nobody is perfect
+-------------------------
 Unfortunately I can not test every possible constellation/configuration.
 If you found some issue or bug or miss some feature:
 Please create an issue on https://github.com/fwxx/swun/issues
@@ -63,17 +76,18 @@ I'd also appreciate, if you just tell me that you like this software ;-)
 
 
 
-======== Documentation ========
+Documentation
+-------------
 Swun is (quite) well documented in its man page, have a look at it(man swun).
 
-
-How Swun works:
-It does not more than check changes in the changelog 
--This is essentially what "slackpkg check-updates" does-
+### How Swun works
+It does not more than check changes in the changelog ---
+This is essentially what "slackpkg check-updates" does.
 and changes the icon color accordingly:
-red == update available,
-green == system is up to date(no changes to the changelog)
+- red == update available,
+- green == system is up to date(no changes to the changelog)
 
+### The menu
 Right Click-> There are only 4 Menu Actions:
 - Check ChangeLog
  (this is the action, that is automatically triggered from time to time, 
@@ -89,8 +103,8 @@ Right Click-> There are only 4 Menu Actions:
 
 
 
-Note on root rights:
+### Alternative Setup
 You can also add slackpkg tool as a sudo command:
-# enable sudo package management without passwords questions like in this line:
-$(user)  ALL=(root) NOPASSWD: /usr/sbin/slackpkg
-And set the "USE_SUDO" variable in swun.sh to "yes".
+enable sudo package management without passwords questions like in this line:
+    $(user)  ALL=(root) NOPASSWD: /usr/sbin/slackpkg
+And set the "USE\_SUDO" variable in swun.sh to "yes".
