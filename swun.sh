@@ -53,9 +53,10 @@ fi
 function doCheck()
 {
     #avoid control character with -spinning=off
-    OUTPUT=$(/usr/sbin/slackpkg -spinning=off check-updates | grep -v "^$")
-    echo "$OUTPUT"
-    if [ "$OUTPUT" == "News on ChangeLog.txt" ]; then
+    OUTPUT=$(/usr/sbin/slackpkg -spinning=off check-updates 2>&1)
+    RET="$?"
+    echo "$OUTPUT" | grep -v "^$"
+    if [ "$RET" == "100" ]; then
 	RETURN=1;
     else
 	RETURN=0;
@@ -66,6 +67,7 @@ function doCheck()
 
 function checkPackages()
 {
+	autoUpdate > /dev/null 2>&1
 #    OUTPUT=$($PKG_TOOL -dialog=off -batch=on -default_answer=n upgrade-all | grep -v "^$" | grep -v "DONE$" | grep -v "^Total package" | grep -v "^Do you wish to upgrade")
     OUTPUT=$($SUDO $PKG_TOOL -dialog=off -batch=on -default_answer=n upgrade-all | grep '\.t.z')
     for line in $OUTPUT 
