@@ -1,5 +1,13 @@
+CODING INFOS
+============
+slackware 15.0 (and newer)
+--------------------------
+slackpkg has return codes.
+we no longer need to rely on some text messages.
 
-#######################CODING INFOS################################
+
+up to slackware 14.2 (and release 0.0.3)
+----------------------------------------
 slackpkg always returns 0
 
 STATE=
@@ -17,7 +25,8 @@ after an call to update,
 check-updates will return "No news is good news"
 
 
-#######################EXPORT INFOS################################
+EXPORT INFOS
+============
 #create annotated tag
 git tag -a -m "new tag 0.0.1" v0.0.1
 git archive --format=tar.gz -o FILENAME --prefix=swun-TAG/ vTAG
