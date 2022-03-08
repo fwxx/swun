@@ -5,7 +5,7 @@
 
 
 PRGNAM=swun
-VERSION=${VERSION:-0.0.4}
+VERSION=${VERSION:-0.0.5}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_fwxx}
 

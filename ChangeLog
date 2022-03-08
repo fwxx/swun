@@ -1,6 +1,22 @@
+2022-03-08 23:49:34 +0100 Benno <fwxx@rocketmail.com> 
+
+	* updated coding infos (HEAD -> master, origin/master, origin/HEAD)
+
+2022-03-08 23:25:09 +0100 Benno <fwxx@rocketmail.com> 
+
+	* fix ownership of /usr/share/doc/swun-... files
+
+2022-03-08 23:12:32 +0100 Benno <fwxx@rocketmail.com> 
+
+	* adjust swun.sh script for changes in slackpkg
+
+2022-02-11 00:10:40 +0100 Benno <fwxx@rocketmail.com> 
+
+	* update ChangeLog (tag: v0.0.4)
+
 2022-02-10 23:52:43 +0100 Benno <fwxx@rocketmail.com> 
 
-	* prepare for release v0.0.4 (HEAD -> master)
+	* prepare for release v0.0.4
 
 2022-02-10 23:41:18 +0100 Benno <fwxx@rocketmail.com> 
 
@@ -8,7 +24,7 @@
 
 2022-02-10 22:27:37 +0100 Benno <fwxx@rocketmail.com> 
 
-	* fix README.md format (origin/master, origin/HEAD)
+	* fix README.md format
 
 2022-02-10 22:15:01 +0100 Benno <fwxx@rocketmail.com> 
 
